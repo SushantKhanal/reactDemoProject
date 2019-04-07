@@ -1,5 +1,4 @@
 import React from 'react';
-import Radium from 'radium';
 
 const person = (props) => {
     let classes = []; 
@@ -9,14 +8,9 @@ const person = (props) => {
     if(props.name.length <= 3) {
         classes.push('bold');
     };
-    const style = {
-        '@media (min-width: 500px)': {
-            width: '450px',
-            backgroundColor: 'blue'
-        }
-    }
+    
     return (
-            <div style={style} className='Person'>
+            <div className='Person'>
                 <p className={classes.join(' ')}>I'm {props.name}. I'm {props.age} year old.</p>
                 <p>{props.children}</p>
                 <input type='text' onChange={props.changeName} value={props.name}/>
@@ -24,4 +18,4 @@ const person = (props) => {
     )
 }
 
-export default Radium(person);
+export default person;

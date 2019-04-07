@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Radium, { StyleRoot } from 'radium';
 import './App.css';
 import Person from './Person'
 
@@ -41,19 +40,12 @@ class App extends Component {
       border: '1px solid #333333',
       padding: '8 px',
       cursor: 'pointer',
-      ':hover': {
-        backgroundColor: 'lightgreen',
-        color: 'black'
-      }
     }
     let persons = null;
     if(this.state.revealPersons) {
       style.backgroundColor = 'red';
-      style[':hover'] = {
-        backgroundColor: 'lightred',
-        color: 'black'
-      }
-       persons = this.state.persons.map((person,index)=>(
+
+      persons = this.state.persons.map((person,index)=>(
         <Person key={person.id} 
         name={person.name} age={person.age} 
         click={this.switchNameHandler}
@@ -61,7 +53,6 @@ class App extends Component {
       ));
     } 
     return (
-      <StyleRoot>
         <div className="App">
           <h1>Hi World, I'm not dead! And I will not be!</h1>
           <h1>yuhuu</h1>
@@ -70,9 +61,8 @@ class App extends Component {
             onClick={this.togglePersonHandler}>Switch Name</button>
           {persons}
         </div>
-      </StyleRoot>
     );
   }
 }
 
-export default Radium(App);
+export default App;
