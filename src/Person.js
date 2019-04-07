@@ -8,6 +8,10 @@ const person = (props) => {
     if(props.name.length <= 3) {
         classes.push('bold');
     };
+    const rnd = Math.random();
+    if(rnd > 0.7){
+        throw new Error("Something Went Wrong")
+    }
     
     return (
             <div className='Person'>

@@ -7,11 +7,12 @@
   text-align: center;
 }
 
-/* @media (min-width: 500px) {
-  .person{
+@media (min-width: 500px) {
+  .Person{
     width: 450px;
+    background-color: gold;
   } 
-} */
+}
 
 .App {
   text-align: center;
