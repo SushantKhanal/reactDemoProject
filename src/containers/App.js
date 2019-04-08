@@ -3,7 +3,7 @@ import './App.css';
 import Cockpit from '../components/Cockpit/Cockpit';
 import Persons from '../components/Persons/Persons';
 
-class App extends Component {
+class App extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -16,6 +16,19 @@ class App extends Component {
 
   componentDidMount(){
     console.log("Inside app.js componentDidMount()");
+  }
+
+  // shouldComponentUpdate(nextProps, nextState) {
+  //     console.log("Update app.js, shouldComponentUpdate() method, nextProps:", nextProps, "; nextState:", nextState);
+  //     return true;
+  // }
+
+  componentWillUpdate(nextProps, nextState) {
+      console.log("Update app.js, componentWillUpdate() method, nextProps:", nextProps, "; nextState:", nextState);
+  }
+
+  componentDidUpdate() {
+      console.log("Update app.js, componentDidUpdate() method");   
   }
 
   state = {
