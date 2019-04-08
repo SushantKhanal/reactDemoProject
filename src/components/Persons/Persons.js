@@ -12,6 +12,10 @@ class Persons extends Component {
         console.log("Inside Persons.js componentWillMount()");
     }
 
+    componentWillUnmount(){
+        console.log("Inside Persons.js componentWillUnMount()");
+    }
+
     componentDidMount(){
         console.log("Inside Persons.js componentDidMount()");
     }
