@@ -14,7 +14,7 @@ const cockpit = (props) => {
       } 
     return(
         <div>
-        <h1>Hi World, I'm not dead! And I will not be!</h1>
+        <h1>{props.title}</h1>
         <h1>yuhuu</h1>
         <button 
             style={style}
