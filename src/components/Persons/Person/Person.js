@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const person = (props) => {
-    let classes = []; 
-    if(props.name.length <= 5) {
-        classes.push('red');
-    };
-    if(props.name.length <= 3) {
-        classes.push('bold');
-    };
-    
-    return (
+class Person extends Component {
+    render() {
+        let classes = []; 
+        if(this.props.name.length <= 5) {
+            classes.push('red');
+        };
+        if(this.props.name.length <= 3) {
+            classes.push('bold');
+        };
+        return (
             <div className='Person'>
-                <p className={classes.join(' ')}>I'm {props.name}. I'm {props.age} year old.</p>
-                <p>{props.children}</p>
-                <input type='text' onChange={props.changeName} value={props.name}/>
+                <p className={classes.join(' ')}>I'm {this.props.name}. I'm {this.props.age} year old.</p>
+                <p>{this.props.children}</p>
+                <input type='text' onChange={this.props.changeName} value={this.props.name}/>
             </div>
     )
+    }
 }
 
-export default person;
+export default Person;
