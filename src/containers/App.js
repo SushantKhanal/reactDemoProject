@@ -39,7 +39,8 @@ class App extends PureComponent {
       {name: 'Sushant', age: '25', id:112},
       {name: 'Shayujya', age: '18', id:113},
     ], 
-    revealPersons: true
+    revealPersons: true,
+    toggleClicked: 0,
   }
 
   switchNameHandler = (name) => {
@@ -53,7 +54,12 @@ class App extends PureComponent {
   }
 
   togglePersonHandler = () => {
-    this.setState({revealPersons: !this.state.revealPersons})
+    this.setState((prevState, props)=>({
+      revealPersons: !this.state.revealPersons,
+      toggleClicked: prevState.toggleClicked + 1,       //this.state.toggleClicked + 1, is the improper way of doing it 
+    }))                                                 // because this.setState is asynchronous
+                                                        //because there might be a danger of editing the state at the same time
+                                                        //in other parts of the application 
   }
 
   nameChangeHandler = (event, index) => {
