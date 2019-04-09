@@ -1,4 +1,5 @@
 import React from 'react';
+import Aux from '../../hoc/Aux';
 
 const cockpit = (props) => {
     const style = {
@@ -13,13 +14,13 @@ const cockpit = (props) => {
         style.backgroundColor = 'red';
       } 
     return(
-        <div>
-        <h1>{props.title}</h1>
-        <h1>yuhuu</h1>
-        <button 
-            style={style}
-            onClick={props.togglePersonHandler}>Switch Name</button>
-    </div> 
+        <Aux>
+            <h1>{props.title}</h1>
+            <h1>yuhuu</h1>
+            <button 
+                style={style}
+                onClick={props.togglePersonHandler}>Switch Name</button>
+        </Aux> 
     )
 }
 
