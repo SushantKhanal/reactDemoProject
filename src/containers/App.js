@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import './App.css';
 import Cockpit from '../components/Cockpit/Cockpit';
 import Persons from '../components/Persons/Persons';
+import WithClass from '../hoc/WithClass';
 
 class App extends PureComponent {
 
@@ -70,14 +71,14 @@ class App extends PureComponent {
                   nameChangeHandler = {this.nameChangeHandler}/>
     } 
      return (
-         <div className="App">
+         <WithClass classes="App">
            <Cockpit 
              title={this.props.title} 
              revealPersons={this.state.revealPersons}
              togglePersonHandler={this.togglePersonHandler}
            />
           {persons}
-        </div>
+        </WithClass>
     );
   }
 }
