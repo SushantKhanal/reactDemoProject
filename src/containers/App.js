@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react';
 import './App.css';
 import Cockpit from '../components/Cockpit/Cockpit';
 import Persons from '../components/Persons/Persons';
-import WithClass from '../hoc/WithClass';
+import Aux from '../hoc/Aux';
+import withClass from '../hoc/withClass';
 
 class App extends PureComponent {
 
@@ -71,16 +72,19 @@ class App extends PureComponent {
                   nameChangeHandler = {this.nameChangeHandler}/>
     } 
      return (
-         <WithClass classes="App">
+        //  <WithClass classes="App">
+        <Aux>
            <Cockpit 
              title={this.props.title} 
              revealPersons={this.state.revealPersons}
              togglePersonHandler={this.togglePersonHandler}
            />
           {persons}
-        </WithClass>
+        </Aux>
+
+        // </WithClass>
     );
   }
 }
 
-export default App;
+export default withClass(App, 'App');
