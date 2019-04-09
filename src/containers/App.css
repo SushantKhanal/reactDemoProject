@@ -10,7 +10,7 @@
 @media (min-width: 500px) {
   .Person{
     width: 450px;
-    background-color: gold;
+    /* background-color: gold; */
   } 
 }
 
