@@ -14,13 +14,13 @@ const cockpit = (props) => {
         style.backgroundColor = 'red';
       } 
     return(
-        <Aux>
+        <>
             <h1>{props.title}</h1>
             <h1>yuhuu</h1>
             <button 
                 style={style}
                 onClick={props.togglePersonHandler}>Switch Name</button>
-        </Aux> 
+        </> 
     )
 }
 
