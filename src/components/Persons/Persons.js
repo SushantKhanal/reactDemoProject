@@ -10,6 +10,7 @@ class Persons extends Component {
     }
     
     componentWillMount(){
+        //discouraged
         console.log("Inside Persons.js componentWillMount()");
     }
 
@@ -23,6 +24,7 @@ class Persons extends Component {
     }
 
     componentWillReceiveProps(nextProps) {
+        //discouraged
         console.log("Update Persons.js, componentWillRecieveProps, nextProps:", nextProps);
     }
 
@@ -32,6 +34,7 @@ class Persons extends Component {
     }
 
     componentWillUpdate(nextProps, nextState) {
+        //discouraged
         console.log("Update Persons.js, componentWillUpdate() method, nextProps:", nextProps, "; nextState:", nextState);
     }
 
@@ -51,7 +54,6 @@ class Persons extends Component {
                     name={person.name} 
                     age={person.age} 
                     click={this.props.switchNameHandler}
-                    authenticated={this.props.isAuthenticated}
                     changeName={(event)=>this.props.nameChangeHandler(event,index)}
                 />
         ))}
