@@ -36,6 +36,7 @@ class Person extends Component {
         };
         return (
             <Aux>
+                {this.props.authenticated ? <p>I'm authenticated bitcheees!</p> : null}
                 <p className={classes.join(' ')}>I'm {this.props.name}. I'm {this.props.age} year old.</p>
                 <p>{this.props.children}</p>
                 <input 

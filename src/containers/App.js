@@ -41,6 +41,7 @@ class App extends PureComponent {
     ], 
     revealPersons: true,
     toggleClicked: 0,
+    authenticated: false,
   }
 
   switchNameHandler = (name) => {
@@ -68,6 +69,10 @@ class App extends PureComponent {
     this.setState({persons})
   }
 
+  loginHandler = () => {
+    this.setState({authenticated: true});
+  }
+
   render() {
     console.log("App.js inside render");
     let persons = null;
@@ -75,7 +80,9 @@ class App extends PureComponent {
       persons = <Persons 
                   persons={this.state.persons}
                   switchNameHandler = {this.switchNameHandler}
-                  nameChangeHandler = {this.nameChangeHandler}/>
+                  nameChangeHandler = {this.nameChangeHandler}
+                  isAuthenticated = {this.state.authenticated}
+                />
     } 
      return (
         //  <WithClass classes="App">
@@ -84,6 +91,7 @@ class App extends PureComponent {
              title={this.props.title} 
              revealPersons={this.state.revealPersons}
              togglePersonHandler={this.togglePersonHandler}
+             login={this.loginHandler}
            />
           {persons}
         </Aux>

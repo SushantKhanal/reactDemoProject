@@ -51,6 +51,7 @@ class Persons extends Component {
                     name={person.name} 
                     age={person.age} 
                     click={this.props.switchNameHandler}
+                    authenticated={this.props.isAuthenticated}
                     changeName={(event)=>this.props.nameChangeHandler(event,index)}
                 />
         ))}

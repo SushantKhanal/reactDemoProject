@@ -20,6 +20,7 @@ const cockpit = (props) => {
             <button 
                 style={style}
                 onClick={props.togglePersonHandler}>Switch Name</button>
+            <button onClick={props.login}>logIn</button>    
         </> 
     )
 }
