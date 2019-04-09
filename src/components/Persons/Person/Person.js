@@ -17,7 +17,11 @@ class Person extends Component {
 
     componentDidMount(){
         console.log("Inside Person.js componentDidMount()");
-        if(this.props.position === 0) 
+        // if(this.props.position === 0) 
+        // this.inputElement.current.focus(); //inputElement is the wrapper component/element and current gives us access to the underlying dom element
+    }
+
+    focus(){
         this.inputElement.current.focus();
     }
 
@@ -31,7 +35,6 @@ class Person extends Component {
             classes.push('bold');
         };
         return (
-            // <WithClass classes='Person'>
             <Aux>
                 <p className={classes.join(' ')}>I'm {this.props.name}. I'm {this.props.age} year old.</p>
                 <p>{this.props.children}</p>
@@ -42,7 +45,6 @@ class Person extends Component {
                     value={this.props.name}
                 />
             </Aux>
-            // </WithClass>
     )
     }
 }
@@ -53,4 +55,5 @@ Person.propTypes = {
     changeName: PropTypes.func,
 }
 
-export default withClass(Person, 'Person');
+export default withClass(Person, 'Person'); //for forward reference to work through the wrapper class
+                                            //special changes in the wrapper class is necessary    
